@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Changing Room</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Marquee Text Box -->
+    <div class="marquee-container">
+        <marquee class="marquee-text">
+            <i class="fa-solid fa-shirt"></i> Welcome to the E-Changing Room!     
+            <i class="fa-solid fa-tshirt"></i> Try on virtual clothes!     
+            <i class="fa-solid fa-cart-shopping"></i> Experience a new way of shopping by virtually trying on clothes before purchasing!     
+            <i class="fa-solid fa-play-circle"></i> Get started now and have fun! 
+        </marquee>
+    </div>
+
+    <div class="container">
+        <!-- First Box: Person's Image (Capture Real-Time Photo) -->
+        <div class="box" id="personBox">
+            <h2>Capture Your Photo</h2>
+            <div class="person-container">
+                <video id="video" width="100%" height="auto" autoplay></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+                <button id="captureButton">Capture Photo</button>
+                <img id="capturedImage" alt="Captured Photo" style="display:none; width: 100%"/>
+            </div>
+        </div>
+
+        <!-- Second Box: Shirt Code Input and Shirt Preview -->
+        <div class="box" id="shirtBox">
+            <h2>Select a Shirt</h2>
+            <form id="shirtForm">
+                <label for="shirtCode">Enter Shirt Code:</label>
+                <input type="text" id="shirtCode" name="shirtCode" required>
+                <button type="submit">Show Shirt</button>
+            </form>
+            <div id="shirtImageContainer"></div>
+            <button id="wearShirtButton" style="display: none;">Wear Shirt</button>
+        </div>
+
+        <!-- Third Box: Person Wearing the Selected Shirt -->
+        <div class="box" id="wearShirtBox">
+            <h2>Person Wearing the Shirt</h2>
+            <div class="person-container" id="wearShirtContainer">
+                <!-- The final person image with shirt will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="j.js"></script>
+</body>
+</html>
